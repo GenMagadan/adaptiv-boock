@@ -1,0 +1,59 @@
+<mat-sidenav-container>
+   <mat-sidenav [opened]="isSidenavOpened" mode="side">
+      <mat-nav-list>
+         <div class="menu">
+            <a mat-list-item routerLink="home" routerLinkActive="mat-mdc-list-item-active " [routerLinkActiveOptions]="{exact:
+            true}">
+               <mat-icon matListItemIcon>home</mat-icon>
+               <span matListItemTitle>Главная</span>
+            </a>
+            <a mat-list-item routerLink="boock" routerLinkActive="mat-mdc-list-item-active " [routerLinkActiveOptions]="{exact:
+            true}">
+               <mat-icon matListItemIcon>menu_book</mat-icon>
+               <span matListItemTitle>Книги</span>
+               <span class="amount">{{ linkBoocks }}</span>
+            </a>
+            <a mat-list-item routerLink="authors" routerLinkActive="mat-mdc-list-item-active "
+               [routerLinkActiveOptions]="{exact:
+            true}">
+               <mat-icon matListItemIcon>sensor_occupied</mat-icon>
+               <span matListItemTitle>Авторы</span>
+               <span class="amount">{{ linkAuthors }}</span>
+            </a>
+            <a mat-list-item routerLink="journals" routerLinkActive="mat-mdc-list-item-active "
+               [routerLinkActiveOptions]="{exact:
+            true}">
+               <mat-icon matListItemIcon>book_online</mat-icon>
+               <span matListItemTitle>Журналы</span>
+               <span class="amount">{{ linkJournals }}</span>
+            </a>
+            <a mat-list-item routerLink="articles" routerLinkActive="mat-mdc-list-item-active "
+               [routerLinkActiveOptions]="{exact:
+            true}">
+               <mat-icon matListItemIcon>summarize</mat-icon>
+               <span matListItemTitle>Статьи</span>
+               <span class="amount">{{ linkArticles }}</span>
+            </a>
+
+         </div>
+      </mat-nav-list>
+      <mat-nav-list>
+         <div class="exit">
+            <a mat-list-item routerLink="exit" routerLinkActive="mat-mdc-list-item-active " [routerLinkActiveOptions]="{exact:
+            true}">
+               <mat-icon matListItemIcon>door_back</mat-icon>
+               <span matListItemTitle>Выход</span>
+               <span class="amount">{{ linkArticles }}</span>
+            </a>
+         </div>
+      </mat-nav-list>
+
+   </mat-sidenav>
+   <mat-sidenav-content>
+      <div class="box">
+         <button mat-raised-button color="primary" (click)="toggleSidenav()">Начнём</button>
+         <button mat-raised-button color="accent" (click)="clouseSidenav()">Закончим</button>
+         <router-outlet></router-outlet>
+      </div>
+   </mat-sidenav-content>
+</mat-sidenav-container>
